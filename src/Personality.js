@@ -1,5 +1,4 @@
 
-
 let col1 = 0
 let col2 = 0
 let col3 = 0
@@ -76,6 +75,13 @@ export let msgta=""
 export let msgtn=""
 export let msgtc=""
 export let msgte=""
+export let num= Number ;
+export let num1= Number ;
+export let num2= Number ;
+export let num3= Number ;
+export let num4= Number ;
+export let num6= Number ;
+export let num5= Number ;
 
 
 
@@ -112,22 +118,27 @@ export const evaluatePersonality = (obj, recursed = false) => {
         msgPti ="De 75% à 100% : Vous êtes très intolérant à l'incertitude"
         msgPap ="De 75% à 100% : Vous avez beaucoup d'anxiété prospective"
         msgPai ="De 75% à 100% : Vous avez beaucoup d'anxiété inhibitrice"
+        num=100
       } else if ( (col4 >= 10 || (col4 >= 8 && col3 >= 2))||((col4 >= 6) && ( col3 >= 3 && col2 >= 2))) {
         msgPti ="De 50% à 75% : Vous êtes plutôt intolérant à l'incertitude"
         msgPap ="De 50% à 75% : Vous avez de l'anxiété prospective"
         msgPai ="De 50% à 75% : Vous avez de l'anxiété inhibitrice"
+        num=75
       } else if ((col3 >= 10 || (col3 >= 8 && col2 >= 2))||((col3 >= 6) && ( col2 >= 3 && col1 >= 2)) ){
         msgPti ="De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude"
         msgPap ="De 25% à 50% : Vous avez plutôt peu d'anxiété prospective"
         msgPai ="De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        num=50
       } else if ( (col2 >= 10 || (col2 >= 8 && col1 >= 2))|| (col2 >= 6 && col1 >= 2)||(col1>=7) ){
         msgPti ="De 0% à 25 % : Vous êtes très tolérant à l'incertitude"
         msgPap ="De 0% à 25 % : Vous avez très peu d'anxiété prospective"
         msgPai ="De 0% à 25 % : Vous avez très peu d'anxiété inhibitrice"
+        num=25
       } else {
         msgPti ="De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude"
         msgPap ="De 25% à 50% : Vous avez plutôt peu d'anxiété prospective"
         msgPai ="De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        num=50
       }
   
     }
@@ -162,12 +173,16 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if (((col5i >= 25 )|| (col5i >=25 && col4i >= 4)) ||((col5i >= 22) && ( col4i >= 6 &&col3i >= 4))) {
         msgi = "De 81.2% à 100% : Votre intelligence émotionnelle est forte"
+        num1=100
       } else if ( (col4i >= 25 || (col4i >= 24 && col3i >= 4))||((col4i >= 22) && ( col3i >= 8 && col2i >= 2))) {
         msgi ="De 61.5% à 81.1% : Votre intelligence émotionnelle est dans la moyenne "
+        num1=80
       } else if ((col3i >= 22 || (col3i >= 22 && col2i >= 4))||((col3i >= 22) && ( col2i >= 4 && col1i >= 2)) ||(col1>=14)){
         msgi ="De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        num1=50
       } else {
         msgi = "De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        num1=50
       }
   
     }
@@ -201,12 +216,16 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if (((col5o >= 8 )|| (col5o >=6 && col4o >= 2)) ||((col5o >=7) && ( col4o >= 2 &&col3o >= 1)) ){
         msgo = "De 75% à 100% : Vous avez tendance à être plus optimiste que la moyenne"
+        num2=100
       } else if ( (col4o >= 8 || (col4o >= 6 && col3o >= 3))||((col4o >= 5) && ( col3o >= 3 && col2o >= 1))) {
         msgo ="De 55% à 75% : Votre tendance à l'optimisme est dans la moyenne"
+        num2=75
       } else if (((col3o >= 8 || (col3o >= 6 && col2o >= 3))||((col3o >= 6) && (( col2o >= 2 && col1o >= 2)) )||(col1o>=7))){
         msgo ="De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne"
+        num2=50
       } else {
         msgo = "De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne "
+        num2=50
       }
   
     }
@@ -244,18 +263,21 @@ export const evaluatePersonality = (obj, recursed = false) => {
         msgtn="De 50% à 100% : Neuroticisme"
         msgtc="De 50% à 100% : Consciencieusité"
         msgte="De 50% à 100% : Extraversion"
+        num3=100
       } else if ( (col2t >= 20 || (col2t >= 15 && col1t >= 5))||((col1t >= 15) && ( col3t>= 3 && col2t >= 5))) {
         msgt ="De 0% à 50% : Fermeture à l'expérience"
         msgta="De 0% à 50% : Désagréabilité dans les relations"
         msgtn="De 0% à 50% : Stabilité émotionnelle"
         msgtc="De 0% à 50% : Impulsivité"
         msgte="De 0% à 50% : Introversion"
+        num3=50
       } else {
         msgt ="De 50% à 100% : Ouverture à l'expérience"
         msgta="De 50% à 100% : Agréabilité dans les relations"
         msgtn="De 50% à 100% : Neuroticisme"
         msgtc="De 50% à 100% : Consciencieusité"
         msgte="De 50% à 100% : Extraversion"
+        num3=50
       }
   
     }
@@ -288,12 +310,16 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if  ((col3r>=17)||(col3r>=14 && col2r>=5)){
         msgr = "De 66% à 100% : Forte réactivité au stress"
+        num4=100
       } else if ((col2r>=17)||(col2r>=14 && col1r>=5)){
         msgr ="De 33% à 66% : Moyenne réactivité au stress"
+        num4=-66
       } else if((col1r>=17)||(col1r>=14 && col2r>=5)) {
         msgr ="De 0% à 33% : Faible réactivité au stress"
+        num4=33
       } else {
         msgr = "De 33% à 66% : Moyenne réactivité au stress"
+        num4=33
       }
   
     }
@@ -493,14 +519,19 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if (((col5re >= 25 )|| (col5re >= 20 && col4re >= 7)) ||((col5re >= 20) && ( col4re >= 4 &&col3re >= 5))) {
         msgre = "De 75% à 100% : Grande difficulté de régulation de vos émossions "
+        num5=100
       } else if ( (col4re >= 20 || (col4re >= 15 && col3re >= 8))||((col4re >=15 ) && ( col3re >= 9 && col2re >= 4))) {
         msgre = "De 50% à 75% : Difficulté de régulation de vos émossions"
+        num5=75
       } else if ((col3re >= 20 || (col3re >= 15 && col2re >= 5))||((col3re >= 15) && ( col2re >= 5 && col1re >= 5)) ){
         msgre ="De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        num5=50
       } else if ( (col2re >= 19 || (col2re >= 17 && col1re >= 8))|| (col2re >= 17 && col1re >= 6)||(col1re>=22) ){
         msgre = "De 0% à 25 % : Très peu de difficulté de régulation de vos émossions"
+        num5=25
       } else {
         msgre = "De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        num5=50
       }
   
     }
@@ -539,26 +570,32 @@ export const evaluatePersonality = (obj, recursed = false) => {
         msga = "De 75% à 100% : Vous êtes authentique"
         msgaa = "De 75% à 100% : Vous avez conscience de vos expériences vécues"
         msgaaa = "De 75% à 100% : Vous ne vous conformez pas aux attentes des autres"
+        num6=100
 
       } else if ((col6a>=8)||(col6a>=6 && col5a>=4)){
         msga ="De 50% à 75% : Vous êtes plutôt authentique"
         msgaa = "De 50% à 75% : Vous avez plutôt conscience de vos expériences vécues"
         msgaaa = "De 50% à 75% : Vous vous conformez peu aux attentes des autres"
+        num6=75
       } else if((col5a>=5)||((col5a>= 3 && col4a>=2)) ){
         msga ="De 25% à 50% : Vous êtes peu authentique"
         msgaa = "De 25% à 50% : Vous avez peu conscience de vos expériences vécues"
         msgaaa = "De 25% à 50% : Vous acceptez plutôt l'influence d'autres personnes"
+        num6=50
       } else if((col1a>=8)||((col1a>= 6 && col2a>=2)) ){
         msga ="De 0% à 25% : Vous n'êtes pas authentique"
         msgaa = "De 0% à 25% : Vousn'avez pas conscience de vos expériences vécues"
         msgaaa = "De 0% à 25% : Vous acceptez l'influence d'autres personnes"
+        num6=25
       }else {
         msga = "De 25% à 50% : Vous êtes peu authentique"
         msgaa = "De 25% à 50% : Vous avez peu conscience de vos expériences vécues"
         msgaaa = "De 25% à 50% : Vous acceptez plutôt l'influence d'autres personnes"
+        num6=50
       }
   
     }
 
   
   }
+  
