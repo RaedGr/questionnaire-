@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React from 'react'
 import { Route, Routes, Link, useNavigate } from 'react-router-dom'
 import { evaluatePersonality } from './Personality'
 import * as Survey from 'survey-react'
@@ -43,9 +43,9 @@ function App() {
 
   const Intro = () => (
     <div className="welcome-msg">
-      <h1>Welcome</h1>
+      
       <Link to="/survey">
-        <button className="next-button">Start survey</button>
+        <button className="next-button">Start questionnaire</button>
       </Link>
     </div>
   )

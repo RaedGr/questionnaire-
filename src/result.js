@@ -159,18 +159,17 @@ export default function Result (){
     ];
     
 return (
-<div>
-<div className='cont'>
-<div>
-<div className='titre'>Nom et prénom:</div>
-<div className='msg'>{question1}</div>
+
+<div >
+<h1>Nom et prénom:</h1>
+<div className='msg'><h2>{question1}</h2></div>
 <div className='titre'>Votre tolérance à l'incertitude:</div>
 <div className='msg'>{msgPti}</div>
 <div className='titre'>Votre anxiété prospective:</div>
 <div className='msg'>{msgPap}</div>
-<div className='titre'> Votre anxiété inhibitrice:</div>
+<div className='titre'>Votre anxiété inhibitrice:</div>
 <div className='msg'>{msgPai}</div>
-<div className='titre'> Votre intelligence émotionnelle:</div>
+<div className='titre'>Votre intelligence émotionnelle:</div>
 <div className='msg'>{msgi}</div>
 <div className='titre'>Votre optimisme:</div>
 <div className='msg'>{msgo}</div>
@@ -186,13 +185,14 @@ return (
 <div className='msg'>{msgte}</div>
 <div className='titre'>Votre réactivité au stress:</div>
 <div className='msg'>{msgr}</div>
-</div>
+
+<div >
 <RadarChart
-      cx={500}
+      cx={550}
       cy={350}
       outerRadius={200}
-      width={1000}
-      height={1000}
+      width={1300}
+      height={900}
       data={data}
     >
       <PolarGrid />
@@ -207,8 +207,7 @@ return (
       />
     </RadarChart>
     </div>
-    <div className='cont'>
-      <div>
+      
 <div className='titre'>Votre estime de soi:</div>
 <div className='msg'>{msges}</div>
 <div className='titre'>Votre flexibilité psychologique:</div>
@@ -219,7 +218,7 @@ return (
 <div className='msg'>{msgbp}</div>
 <div className='titre'>Votre régulation des émotions:</div>
 <div className='msg'>{msgre}</div>
-<div className='titre'>Votre réflexion cognitive</div>
+<div className='titre'>Votre réflexion cognitive:</div>
 <div className='msg'>{rc}</div>
 <div className='titre'>Votre vie authentique:</div>
 <div className='msg'>{msga}</div>
@@ -227,17 +226,15 @@ return (
 <div className='msg'>{msgaa}</div>
 <div className='titre'>Votre acceptation de l'influence extérieure:</div>
 <div className='msg'>{msgaaa}</div>
-<button className="next-button" onClick={() => window.print()}>
-   Download as PDF
- </button>
- </div>
 
+ 
+ <div>
     <RadarChart
-      cx={550}
+      cx={560}
       cy={350}
       outerRadius={200}
-      width={1000}
-      height={1000}
+      width={1300}
+      height={900}
       data={data1}
     >
       <PolarGrid />
@@ -251,8 +248,12 @@ return (
         fillOpacity={0.6}
       />
     </RadarChart>
+    </div>
+    <div className="welcome-msg">
+    <button className="next-button" id="printbtn"onClick={() => window.print()}>
+   Télécharger pdf
+ </button>
  </div>
  </div>
-
  )
  }
