@@ -1,4 +1,3 @@
-import { surveyBuiltInVarible } from "survey-react"
 
 let col1 = 0
 let col2 = 0
@@ -57,7 +56,9 @@ let col4a = 0
 let col5a = 0
 let col6a = 0
 let col7a = 0
-export let msg = ''
+export let msgPti = ''
+export let msgPap =''
+export let msgPai=''
 export let msgi=''
 export let msgo=''
 export let msgt=''
@@ -67,7 +68,23 @@ export let msgfp=''
 export let msgse=''
 export let msgbp=''
 export let msgre=''
+export let msgaa=''
 export let msga=''
+export let msgaaa=''
+export let msgta=""
+export let msgtn=""
+export let msgtc=""
+export let msgte=""
+export let num= Number ;
+export let num1= Number ;
+export let num2= Number ;
+export let num3= Number ;
+export let num4= Number ;
+export let num6= Number ;
+export let num5= Number ;
+
+
+
 export const evaluatePersonality = (obj, recursed = false) => {
     for (let key in obj) {
       const questionNumber = (q) =>
@@ -98,15 +115,30 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if (((col5 >= 10 )|| (col5 >= 8 && col4 >= 2)) ||((col5 >= 6) && ( col4 >= 3 &&col3 >= 2))) {
-        msg = "Votre tolérance à l'incertitude :De 75% à 100% : Vous êtes très intolérant à l'incertitude	<br/>Votre anxiété prospective:De 75% à 100% : Vous avez beaucoup d'anxiété prospective <br/>Votre anxiété inhibitrice:De 75% à 100% : Vous avez beaucoup d'anxiété inhibitrice"
+        msgPti ="De 75% à 100% : Vous êtes très intolérant à l'incertitude"
+        msgPap ="De 75% à 100% : Vous avez beaucoup d'anxiété prospective"
+        msgPai ="De 75% à 100% : Vous avez beaucoup d'anxiété inhibitrice"
+        num=100
       } else if ( (col4 >= 10 || (col4 >= 8 && col3 >= 2))||((col4 >= 6) && ( col3 >= 3 && col2 >= 2))) {
-        msg = "Votre tolérance à l'incertitude :De 50% à 75% : Vous êtes plutôt intolérant à l'incertitude<br/>Votre anxiété prospective:De 50% à 75% : Vous avez de l'anxiété prospective<br/>Votre anxiété inhibitrice:De 50% à 75% : Vous avez de l'anxiété inhibitrice"
+        msgPti ="De 50% à 75% : Vous êtes plutôt intolérant à l'incertitude"
+        msgPap ="De 50% à 75% : Vous avez de l'anxiété prospective"
+        msgPai ="De 50% à 75% : Vous avez de l'anxiété inhibitrice"
+        num=75
       } else if ((col3 >= 10 || (col3 >= 8 && col2 >= 2))||((col3 >= 6) && ( col2 >= 3 && col1 >= 2)) ){
-        msg ="Votre tolérance à l'incertitude :De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude<br/>Votre anxiété prospective:De 25% à 50% : Vous avez plutôt peu d'anxiété prospective<br/>Votre anxiété inhibitrice:De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        msgPti ="De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude"
+        msgPap ="De 25% à 50% : Vous avez plutôt peu d'anxiété prospective"
+        msgPai ="De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        num=50
       } else if ( (col2 >= 10 || (col2 >= 8 && col1 >= 2))|| (col2 >= 6 && col1 >= 2)||(col1>=7) ){
-        msg = "Votre tolérance à l'incertitude :De 0% à 25 % : Vous êtes très tolérant à l'incertitude<br/>Votre anxiété prospective:De 0% à 25 % : Vous avez très peu d'anxiété prospective<br/>Votre anxiété inhibitrice:De 0% à 25 % : Vous avez très peu d'anxiété inhibitrice"
+        msgPti ="De 0% à 25 % : Vous êtes très tolérant à l'incertitude"
+        msgPap ="De 0% à 25 % : Vous avez très peu d'anxiété prospective"
+        msgPai ="De 0% à 25 % : Vous avez très peu d'anxiété inhibitrice"
+        num=25
       } else {
-        msg = "Votre tolérance à l'incertitude :De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude<br/>Votre anxiété prospective:De 25% à 50% : Vous avez plutôt peu d'anxiété prospective<br/>Votre anxiété inhibitrice:De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        msgPti ="De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude"
+        msgPap ="De 25% à 50% : Vous avez plutôt peu d'anxiété prospective"
+        msgPai ="De 25% à 50% : Vous avez plutôt peu d'anxiété inhibitrice"
+        num=50
       }
   
     }
@@ -140,13 +172,17 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if (((col5i >= 25 )|| (col5i >=25 && col4i >= 4)) ||((col5i >= 22) && ( col4i >= 6 &&col3i >= 4))) {
-        msgi = "Votre intelligence émotionnelle :De 81.2% à 100% : Votre intelligence émotionnelle est forte"
+        msgi = "De 81.2% à 100% : Votre intelligence émotionnelle est forte"
+        num1=100
       } else if ( (col4i >= 25 || (col4i >= 24 && col3i >= 4))||((col4i >= 22) && ( col3i >= 8 && col2i >= 2))) {
-        msgi ="Votre intelligence émotionnelle :De 61.5% à 81.1% : Votre intelligence émotionnelle est dans la moyenne "
+        msgi ="De 61.5% à 81.1% : Votre intelligence émotionnelle est dans la moyenne "
+        num1=80
       } else if ((col3i >= 22 || (col3i >= 22 && col2i >= 4))||((col3i >= 22) && ( col2i >= 4 && col1i >= 2)) ||(col1>=14)){
-        msgi ="Votre intelligence émotionnelle :De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        msgi ="De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        num1=50
       } else {
-        msgi = "Votre intelligence émotionnelle :De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        msgi = "De 0% à 61.4% : Votre intelligence émotionnelle est faible"
+        num1=50
       }
   
     }
@@ -179,13 +215,17 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if (((col5o >= 8 )|| (col5o >=6 && col4o >= 2)) ||((col5o >=7) && ( col4o >= 2 &&col3o >= 1)) ){
-        msgo = "Optimisme: De 75% à 100% : Vous avez tendance à être plus optimiste que la moyenne"
+        msgo = "De 75% à 100% : Vous avez tendance à être plus optimiste que la moyenne"
+        num2=100
       } else if ( (col4o >= 8 || (col4o >= 6 && col3o >= 3))||((col4o >= 5) && ( col3o >= 3 && col2o >= 1))) {
-        msgo ="Optimisme:De 55% à 75% : Votre tendance à l'optimisme est dans la moyenne "
+        msgo ="De 55% à 75% : Votre tendance à l'optimisme est dans la moyenne"
+        num2=75
       } else if (((col3o >= 8 || (col3o >= 6 && col2o >= 3))||((col3o >= 6) && (( col2o >= 2 && col1o >= 2)) )||(col1o>=7))){
-        msgo ="Optimisme:De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne  "
+        msgo ="De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne"
+        num2=50
       } else {
-        msgo = "Optimisme:De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne   "
+        msgo = "De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne "
+        num2=50
       }
   
     }
@@ -218,11 +258,26 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if (((col5t >= 30)|| (col5t >=25 && col4o >= 7)) ||((col5t >=25) && ( col4t >= 6 && col3t >= 4))) {
-        msgt = "votre ouverture à l'expérience :De 50% à 100% : Ouverture à l'expérience </br>Votre agréabilité dans les relations  :De 50% à 100% : Agréabilité dans les relations </br>Votre Neuroticisme (ou névrotisme) :De 50% à 100% : Neuroticisme  </br>votre Consciencieusité  :De 50% à 100% : Consciencieusité   </br> votre Extraversion   :De 50% à 100% : Extraversion "
+        msgt ="De 50% à 100% : Ouverture à l'expérience"
+        msgta="De 50% à 100% : Agréabilité dans les relations"
+        msgtn="De 50% à 100% : Neuroticisme"
+        msgtc="De 50% à 100% : Consciencieusité"
+        msgte="De 50% à 100% : Extraversion"
+        num3=100
       } else if ( (col2t >= 20 || (col2t >= 15 && col1t >= 5))||((col1t >= 15) && ( col3t>= 3 && col2t >= 5))) {
-        msgt ="votre ouverture à l'expérience :De 0% à 50% : Fermeture à l'expérience</br>Votre agréabilité dans les relations  :De 0% à 50% : Désagréabilité dans les relations</br>Votre Neuroticisme (ou névrotisme) :De 0% à 50% : Stabilité émotionnelle</br>votre Consciencieusité  :De 0% à 50% : Impulsivité</br> votre Extraversion   :De 0% à 50% : Introversion"
+        msgt ="De 0% à 50% : Fermeture à l'expérience"
+        msgta="De 0% à 50% : Désagréabilité dans les relations"
+        msgtn="De 0% à 50% : Stabilité émotionnelle"
+        msgtc="De 0% à 50% : Impulsivité"
+        msgte="De 0% à 50% : Introversion"
+        num3=50
       } else {
-        msgt = "votre ouverture à l'expérience :De 0% à 50% : Fermeture à l'expérience</br>Votre agréabilité dans les relations  :De 0% à 50% : Désagréabilité dans les relations</br>Votre Neuroticisme (ou névrotisme) :De 0% à 50% : Stabilité émotionnelle</br>votre Consciencieusité  :De 0% à 50% : Impulsivité</br> votre Extraversion   :De 0% à 50% : Introversion"
+        msgt ="De 50% à 100% : Ouverture à l'expérience"
+        msgta="De 50% à 100% : Agréabilité dans les relations"
+        msgtn="De 50% à 100% : Neuroticisme"
+        msgtc="De 50% à 100% : Consciencieusité"
+        msgte="De 50% à 100% : Extraversion"
+        num3=50
       }
   
     }
@@ -254,13 +309,17 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col3r>=17)||(col3r>=14 && col2r>=5)){
-        msgr = "votre Réactivité au stress :De 66% à 100% : Forte réactivité au stress  "
+        msgr = "De 66% à 100% : Forte réactivité au stress"
+        num4=100
       } else if ((col2r>=17)||(col2r>=14 && col1r>=5)){
-        msgr ="votre Réactivité au stress :De 33% à 66% : Moyenne réactivité au stress"
+        msgr ="De 33% à 66% : Moyenne réactivité au stress"
+        num4=-66
       } else if((col1r>=17)||(col1r>=14 && col2r>=5)) {
-        msgr ="votre Réactivité au stress :De 0% à 33% : Faible réactivité au stress "
+        msgr ="De 0% à 33% : Faible réactivité au stress"
+        num4=33
       } else {
-        msgr = "votre Réactivité au stress :De 33% à 66% : Moyenne réactivité au stress"
+        msgr = "De 33% à 66% : Moyenne réactivité au stress"
+        num4=33
       }
   
     }
@@ -293,13 +352,13 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col4es>=7)||(col4es>=5 && col3es>=3)){
-        msges = " Votre estime de soi :De 80% à 100% : Vous avez une estime de vous élevée"
+        msges = "De 80% à 100% : Vous avez une estime de vous élevée"
       } else if ((col3es>=6)||(col3es>=5 && col2es>=3)){
-        msges ="Votre estime de soi :De 50% à 80% : Vous avez une estime de vous dans la moyenne "
+        msges ="De 50% à 80% : Vous avez une estime de vous dans la moyenne"
       } else if((col2es>=7)||(col1es>= 6)) {
-        msges ="Votre estime de soi :De 50% à 80% : De 0% à 50% : Vous avez une estime de vous faible"
+        msges ="De 50% à 80% : De 0% à 50% : Vous avez une estime de vous faible"
       } else {
-        msges = "Votre estime de soi :De 50% à 80% : Vous avez une estime de vous dans la moyenne "
+        msges = "De 50% à 80% : Vous avez une estime de vous dans la moyenne"
       }
   
     }
@@ -335,15 +394,15 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col7fp>=7)||(col7fp>=5 && col6fp>=3)){
-        msgfp = " votre Flexibilité psychologique : De 75% à 100% : Vous avez une très grande flexibilité psychologique"
+        msgfp = "De 75% à 100% : Vous avez une très grande flexibilité psychologique"
       } else if ((col6fp>=7)||(col6fp>=5 && col5fp>=3)){
-        msgfp ="  votre Flexibilité psychologique :  De 50% à 75% : Vous avez une grande flexibilité psychologique"
+        msgfp ="De 50% à 75% : Vous avez une grande flexibilité psychologique"
       } else if((col5fp>=5)||((col5fp>= 3 && col4fp>=3)) ){
-        msgfp ="votre Flexibilité psychologique :De 25% à 50% : Vous avez une faible flexibilité psychologique "
+        msgfp ="De 25% à 50% : Vous avez une faible flexibilité psychologique "
       } else if((col1fp>=5)||((col1fp>= 3 && col2fp>=3)) ){
-        msgfp =" votre Flexibilité psychologique :De 0% à 25% : Vous avez une très faible flexibilité psychologique "
+        msgfp ="De 0% à 25% : Vous avez une très faible flexibilité psychologique "
       }else {
-        msgfp = "votre Flexibilité psychologique :De 25% à 50% : Vous avez une faible flexibilité psychologique "
+        msgfp = "De 25% à 50% : Vous avez une faible flexibilité psychologique "
       }
   
     }
@@ -376,13 +435,13 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col4se>=7)||(col4se>=5 && col3se>=3)){
-        msgse = " votre Sentiment d'efficacité personnelle  :De 70% à 100% : Au dessus de la moyenne "
+        msgse = "De 70% à 100% : Au dessus de la moyenne "
       } else if ((col3se>=6)||(col3se>=5 && col2se>=3)){
-        msgse ="votre Sentiment d'efficacité personnelle  :De 70% à 100% :De 53% à 70% : Dans la moyenne "
+        msgse ="De 53% à 70% : Dans la moyenne "
       } else if((col1se>=7)||((col1se>= 4 && col2se>=3))) {
-        msgse ="votre Sentiment d'efficacité personnelle  :De 0% à 53% : En-dessous de la moyenne"
+        msgse ="De 0% à 53% : En-dessous de la moyenne"
       } else {
-        msgse = "votre Sentiment d'efficacité personnelle  :De 70% à 100% :De 53% à 70% : Dans la moyenne  "
+        msgse = "De 53% à 70% : Dans la moyenne "
       }
   
     }
@@ -418,15 +477,15 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col7bp>=15)||(col7bp>=12 && col6bp>=5)){
-        msgbp = "votre Besoins psychologiques:De 75% à 100% : Vos besoins psychologiques sont satisfaits"
+        msgbp = "De 75% à 100% : Vos besoins psychologiques sont satisfaits"
       } else if ((col6bp>=12)||(col6bp>=8 && col5bp>=5)){
-        msgbp =" votre Besoins psychologiques:De 50% à 75% : Vos besoins psychologiques sont plutôt satisfaits  "
+        msgbp =" De 50% à 75% : Vos besoins psychologiques sont plutôt satisfaits  "
       } else if((col5bp>=5)||((col5bp>= 3 && col4bp>=3)) ){
-        msgbp ="votre Besoins psychologiques:De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
+        msgbp ="De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
       } else if((col1bp>=12)||((col1bp>= 10 && col2bp>=4)) ){
-        msgbp ="votre Besoins psychologiques:De 0% à 25% : Vos besoins psychologiques ne sont pas satisfaits"
+        msgbp ="De 0% à 25% : Vos besoins psychologiques ne sont pas satisfaits"
       }else {
-        msgbp = "votre Besoins psychologiques:De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
+        msgbp = "De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
       }
   
     }
@@ -459,15 +518,20 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if (((col5re >= 25 )|| (col5re >= 20 && col4re >= 7)) ||((col5re >= 20) && ( col4re >= 4 &&col3re >= 5))) {
-        msgre = "Votre Régulation des émotions:De 75% à 100% : Grande difficulté de régulation de vos émossions "
+        msgre = "De 75% à 100% : Grande difficulté de régulation de vos émossions "
+        num5=100
       } else if ( (col4re >= 20 || (col4re >= 15 && col3re >= 8))||((col4re >=15 ) && ( col3re >= 9 && col2re >= 4))) {
-        msgre = "Votre Régulation des émotions:De 50% à 75% : Difficulté de régulation de vos émossions"
+        msgre = "De 50% à 75% : Difficulté de régulation de vos émossions"
+        num5=75
       } else if ((col3re >= 20 || (col3re >= 15 && col2re >= 5))||((col3re >= 15) && ( col2re >= 5 && col1re >= 5)) ){
-        msgre ="Votre Régulation des émotions:De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        msgre ="De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        num5=50
       } else if ( (col2re >= 19 || (col2re >= 17 && col1re >= 8))|| (col2re >= 17 && col1re >= 6)||(col1re>=22) ){
-        msgre = "Votre Régulation des émotions:De 0% à 25 % : Très peu de difficulté de régulation de vos émossions"
+        msgre = "De 0% à 25 % : Très peu de difficulté de régulation de vos émossions"
+        num5=25
       } else {
-        msgre = "Votre Régulation des émotions:De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        msgre = "De 25% à 50% : Peu de difficulté de régulation de vos émossions  "
+        num5=50
       }
   
     }
@@ -503,17 +567,35 @@ export const evaluatePersonality = (obj, recursed = false) => {
     if (!recursed) {
       // change the below to set the rating on the personalities
       if  ((col7a>=8)||(col7a>=6 && col6a>=4)){
-        msga = "Votre Vie authentique :De 0% à 25% : Vous n'êtes pas authentique Votre Aliénation de soi-même :De 75% à 100% : Vous avez conscience de vos expériences vécues  votre Acceptation de l'influence extérieure  :De 75% à 100% : De 75% à 100% : Vous ne vous conformez pas aux attentes des autres"
+        msga = "De 75% à 100% : Vous êtes authentique"
+        msgaa = "De 75% à 100% : Vous avez conscience de vos expériences vécues"
+        msgaaa = "De 75% à 100% : Vous ne vous conformez pas aux attentes des autres"
+        num6=100
+
       } else if ((col6a>=8)||(col6a>=6 && col5a>=4)){
-        msga ="Votre Vie authentique :De 0% à 25% :De 50% à 75% : Vous êtes plutôt authentiqueVotre Aliénation de soi-même :De 50% à 75% : Vous avez plutôt conscience de vos expériences vécues   votre Acceptation de l'influence extérieure  :De 50% à 75% : Vous vous conformez peu aux attentes des autres "
+        msga ="De 50% à 75% : Vous êtes plutôt authentique"
+        msgaa = "De 50% à 75% : Vous avez plutôt conscience de vos expériences vécues"
+        msgaaa = "De 50% à 75% : Vous vous conformez peu aux attentes des autres"
+        num6=75
       } else if((col5a>=5)||((col5a>= 3 && col4a>=2)) ){
-        msga ="votre Besoins psychologiques:De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
+        msga ="De 25% à 50% : Vous êtes peu authentique"
+        msgaa = "De 25% à 50% : Vous avez peu conscience de vos expériences vécues"
+        msgaaa = "De 25% à 50% : Vous acceptez plutôt l'influence d'autres personnes"
+        num6=50
       } else if((col1a>=8)||((col1a>= 6 && col2a>=2)) ){
-        msga ="votre Besoins psychologiques:De 0% à 25% : Vos besoins psychologiques ne sont pas satisfaits"
+        msga ="De 0% à 25% : Vous n'êtes pas authentique"
+        msgaa = "De 0% à 25% : Vousn'avez pas conscience de vos expériences vécues"
+        msgaaa = "De 0% à 25% : Vous acceptez l'influence d'autres personnes"
+        num6=25
       }else {
-        msga = "votre Besoins psychologiques:De 25% à 50% : Vos besoins psychologiques sont peu satisfaits "
+        msga = "De 25% à 50% : Vous êtes peu authentique"
+        msgaa = "De 25% à 50% : Vous avez peu conscience de vos expériences vécues"
+        msgaaa = "De 25% à 50% : Vous acceptez plutôt l'influence d'autres personnes"
+        num6=50
       }
   
     }
 
+  
   }
+  

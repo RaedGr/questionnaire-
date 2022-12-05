@@ -10,6 +10,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
+    "recharts": "^2.1.16",
     "simple-json-table": "^0.0.4",
     "survey-react": "^1.9.57",
     "survey-react-ui": "^1.9.57",

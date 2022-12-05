@@ -1,7 +1,7 @@
 export var json = {
   locale: 'fr',
   title: { default: 'Cadrage', fr: 'Entrepreneuriat' },
-  logoPosition: 'left',
+  logoPosition: 'right',
   showProgressBar: 'top',
   goNextPageAutomatic: true,
   showNavigationButtons: true,
@@ -525,7 +525,7 @@ export var json = {
       elements: [
         {
           type: 'matrix',
-          name: 'question13',
+          name: 'question15',
           title: { fr: 'Optimisme' },
           hideNumber: true,
           columns: [
@@ -566,7 +566,7 @@ export var json = {
         },
         {
           type: 'matrix',
-          name: 'question14',
+          name: 'question13',
           title: { fr: 'Optimisme' },
           hideNumber: true,
           columns: [
@@ -615,7 +615,7 @@ export var json = {
       elements: [
         {
           type: 'matrix',
-          name: 'question15',
+          name: 'question14',
           title: { fr: 'Traits de personnalité' },
           hideNumber: true,
           columns: [

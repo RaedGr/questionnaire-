@@ -1,32 +1,45 @@
-import React, {  useState } from 'react'
+import React, { useState }  from 'react'
 import { Route, Routes, Link, useNavigate } from 'react-router-dom'
-
+import { evaluatePersonality } from './Personality'
 import * as Survey from 'survey-react'
 import { json } from './SurveyData'
-import {evaluatePersonality, msg,msgi,msgo,msgr,msgt,msges,msgfp,msgse,msgbp,msgre,msga } from './Personality'
+
 
 import 'survey-react/defaultV2.css'
 import 'survey-react/modern.css'
-import './index.css'
-import './App.css'
 
-// Survey.StylesManager.applyTheme('modern')
+import Result from './result'
+export let question1=''
+export let question41=''
+export let question42=''
+export let question43=''
+
 Survey.StylesManager.applyTheme('defaultV2')
 
 function App() {
-  const [answers, setAnswers] = useState('')
+  
+
   const navigate = useNavigate()
 
   const survey = new Survey.Model(json)
-
   survey.onComplete.add(function (sender) {
-    // setAnswers(sender.data)
-    // setAnswers(jsonToHtmlForm.getForm(sender.data))
-    // setAnswers([JSON.stringify(sender.data, null, 3)])
-    // console.log('Result JSON:\n' + JSON.stringify(sender.data, null, 3))
+    question1 = survey.getValue("nom")
+    question41 = survey.getValue("question41")
+    question42 = survey.getValue("question42")
+    question43 = survey.getValue("question43")
+
+
+})
+  survey.onComplete.add(function (sender) {
+
+
+
     evaluatePersonality(sender.data)
     navigate('/final')
-  })
+
+   })
+  
+  
 
   const Intro = () => (
     <div className="welcome-msg">
@@ -39,19 +52,8 @@ function App() {
 
   const Final = () => {
     return (
-      // ! need to fix window.print() on mobile. Doesn't work on safari? Does it work on android though?
-      <div className="final-msg">
-        <h1>You are finished</h1>
-        <h1>Thank you for filling out our survey!</h1>
-        <h3>Here are your answers</h3>
-        <h5>Your personality is: {msg}{msgi}{msgo}{msgt}{msgr}{msges}{msgfp}{msgse}{msgbp}{msgre}{msga}</h5>
-        {/* <div style={{ marginBottom: 35, maxWidth: 800 }}>
-          <JSONTable source={answers} />
-        </div> */}
-        <button className="next-button" onClick={() => window.print()}>
-          Download as PDF
-        </button>
-      </div>
+      <Result />
+
     )
   }
 
