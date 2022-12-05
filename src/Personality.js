@@ -118,12 +118,12 @@ export const evaluatePersonality = (obj, recursed = false) => {
         msgPti ="De 75% à 100% : Vous êtes très intolérant à l'incertitude"
         msgPap ="De 75% à 100% : Vous avez beaucoup d'anxiété prospective"
         msgPai ="De 75% à 100% : Vous avez beaucoup d'anxiété inhibitrice"
-        num=100
+        num=90
       } else if ( (col4 >= 10 || (col4 >= 8 && col3 >= 2))||((col4 >= 6) && ( col3 >= 3 && col2 >= 2))) {
         msgPti ="De 50% à 75% : Vous êtes plutôt intolérant à l'incertitude"
         msgPap ="De 50% à 75% : Vous avez de l'anxiété prospective"
         msgPai ="De 50% à 75% : Vous avez de l'anxiété inhibitrice"
-        num=75
+        num=70
       } else if ((col3 >= 10 || (col3 >= 8 && col2 >= 2))||((col3 >= 6) && ( col2 >= 3 && col1 >= 2)) ){
         msgPti ="De 25% à 50% : Vous êtes plutôt tolérant à l'incertitude"
         msgPap ="De 25% à 50% : Vous avez plutôt peu d'anxiété prospective"
@@ -173,10 +173,10 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if (((col5i >= 25 )|| (col5i >=25 && col4i >= 4)) ||((col5i >= 22) && ( col4i >= 6 &&col3i >= 4))) {
         msgi = "De 81.2% à 100% : Votre intelligence émotionnelle est forte"
-        num1=100
+        num1=95
       } else if ( (col4i >= 25 || (col4i >= 24 && col3i >= 4))||((col4i >= 22) && ( col3i >= 8 && col2i >= 2))) {
         msgi ="De 61.5% à 81.1% : Votre intelligence émotionnelle est dans la moyenne "
-        num1=80
+        num1=75
       } else if ((col3i >= 22 || (col3i >= 22 && col2i >= 4))||((col3i >= 22) && ( col2i >= 4 && col1i >= 2)) ||(col1>=14)){
         msgi ="De 0% à 61.4% : Votre intelligence émotionnelle est faible"
         num1=50
@@ -216,16 +216,16 @@ export const evaluatePersonality = (obj, recursed = false) => {
       // change the below to set the rating on the personalities
       if (((col5o >= 8 )|| (col5o >=6 && col4o >= 2)) ||((col5o >=7) && ( col4o >= 2 &&col3o >= 1)) ){
         msgo = "De 75% à 100% : Vous avez tendance à être plus optimiste que la moyenne"
-        num2=100
+        num2=90
       } else if ( (col4o >= 8 || (col4o >= 6 && col3o >= 3))||((col4o >= 5) && ( col3o >= 3 && col2o >= 1))) {
         msgo ="De 55% à 75% : Votre tendance à l'optimisme est dans la moyenne"
-        num2=75
+        num2=70
       } else if (((col3o >= 8 || (col3o >= 6 && col2o >= 3))||((col3o >= 6) && (( col2o >= 2 && col1o >= 2)) )||(col1o>=7))){
         msgo ="De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne"
-        num2=50
+        num2=40
       } else {
         msgo = "De 0% à 55 % : Vous avez tendance à être plus pessimiste que la moyenne "
-        num2=50
+        num2=30
       }
   
     }
