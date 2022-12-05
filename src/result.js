@@ -12,14 +12,14 @@ import {
 
 export default function Result (){
   var auth=Number
-  var rc=''
-  if((question41==='item1') && (question42==='item1')&&(question43==='item3')){
+  var rc=""
+  if((question41[0]==='item1') && (question42[0]==='item1')&&(question43[0]==='item3')){
     auth=100
     rc='100% : Votre pensée est analytique'		
-    }else if((question41==='item1' && question42==='item1')||(question41==='item1'&& question43==='item3')||(question43==='item3'&& question42==='item1')){
+    }else if((question41[0]==='item1' && question42[0]==='item1')||(question41[0]==='item1'&& question43[0]==='item3')||(question43[0]==='item3'&& question42[0]==='item1')){
     auth=66
     rc="66.7% : Votre pensée est plus analytique qu'intuitive	    "
-    }else if((question41==='item1' )||(question42==='item1')||(question43==='item3')){
+    }else if((question41[0]==='item1' )||(question42[0]==='item1')||(question43[0]==='item3')){
     auth=33
     rc="33.3% : Votre pensée est plus intuitive qu'analytique"
     }else
@@ -27,6 +27,7 @@ export default function Result (){
       rc="0% : Votre pensée est intuitive"
     auth=0
     }
+
     const data = [
       {
         subject: "Intolérance à l'incertitude",
